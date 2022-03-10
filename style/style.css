@@ -3,6 +3,15 @@
     color: #2e2e2e;
 }
 
+.bg-secondery {
+    background-color: #2e2e2e;
+}
+
 .nav-link {
     color: #2e2e2e;
+}
+
+.nav-pills>.active>a,
+.nav-pills>.active>a:hover {
+    background-color: crimson;
 }
