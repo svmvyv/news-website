@@ -1,4 +1,8 @@
 .bg-main {
-    background-color: #FDF5DF;
-    color: #5EBEC4;
+    background-color: #ebebebbe;
+    color: #2e2e2e;
+}
+
+.nav-link {
+    color: #2e2e2e;
 }

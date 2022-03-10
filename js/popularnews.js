@@ -4,14 +4,13 @@ const car = document.querySelector("#carouselnews");
 let url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=fb051857391049a1a92e8aab63ca7126`
 
 
-var req = new Request(url);
+fetch(url).then(response => {
+    response.json().then((res) => {
+        console.log(res.articles[0].author);
+    });
+});
 
-fetch(req)
-    .then(function(response) {
-        console.log(response.json());
-    })
-
-const newsc = url.map((title, index) => {
+const newsc = req.map((title, index) => {
     `<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators"
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
