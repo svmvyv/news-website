@@ -7,8 +7,12 @@
     background-color: #2e2e2e;
 }
 
-.nav-link {
-    color: #2e2e2e;
+.nav-tabs>li.active>a {
+    color: rgb(139, 15, 40);
+}
+
+.nav-tabs>li>a {
+    color: crimson;
 }
 
 .nav-pills>.active>a,
