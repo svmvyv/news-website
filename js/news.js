@@ -1,20 +1,30 @@
 const apiKey = "fb051857391049a1a92e8aab63ca7126"
+var url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${apiKey}`;
 
-let url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=fb051857391049a1a92e8aab63ca7126`
+
+doucument.getElementById("#searchBtn").addEventListener('click', function() {
+
+    var url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${apiKey}`;
+    var req = new Request(url);
+    sendRequest(req);
+});
 
 
-fetch(url)
-    .then(response => response.json())
-    .then(data => {
+function searchNews(req) {
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
 
-            console.log(data.articles),
+                console.log(data.articles),
 
-                document.getElementById("news").innerHTML = data.articles.map(news =>
 
-                    `
+                    document.getElementById("news").innerHTML = data.articles.map(news =>
+
+                        `
+                    
                     <div class="col-md-6">
-                    <div class="card" style="width:40rem;">
-                    <img src="${news.urlToImage}" class="card-img-top" alt="...">
+                    <div class="card h-100 pt-5" style="width:40rem;">
+                    <img src="${news.urlToImage}" class="card-img-top"  alt="...">
                     <div class="card-body">
                       <h5 class="card-title"><a href="${news.url}">${news.title}</a></h5>
                       <p class="card-text">${news.description}</p>
@@ -25,7 +35,8 @@ fetch(url)
                   
                   `
 
-                ).join('')
-        }
+                    ).join('')
+            }
 
-    );
+        );
+}
