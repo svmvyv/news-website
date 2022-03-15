@@ -3,7 +3,7 @@ var url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiK
 
 
 doucument.getElementById("#searchBtn").addEventListener('click', function() {
-    let query = doucment.getElementById("#searchquery");
+    let query = doucment.getElementById("#searchquery").val();
     var url = `https://newsapi.org/v2/top-headlines?country=us&q=${query}&apiKey=${apiKey}`;
     var req = new Request(url);
     sendRequest(req);
